@@ -16,8 +16,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    TOOGLE_MODAL_STATE: ({ commit }, { name, value }) => {
+    TOGGLE_MODAL_STATE: ({ commit }, { name, value }) => {
       commit("SET_MODAL_STATE", { name, value });
     }
+  },
+  getters: {
+    modals: state => state.modals
   }
 });
