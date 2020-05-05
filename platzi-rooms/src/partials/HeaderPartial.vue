@@ -75,12 +75,12 @@ export default {
         value: true
       });
       console.log("Sign Up Click");
-    },
-    computed: {
-      ...mapGetters({
-        user: "authUser"
-      })
     }
+  },
+  computed: {
+    ...mapGetters({
+      user: "authUser"
+    })
   }
 };
 </script>
