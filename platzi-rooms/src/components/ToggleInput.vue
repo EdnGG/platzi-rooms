@@ -1,64 +1,30 @@
 <template>
-  <div id="app">
-    <form class="form p-6" @submit.prevent="suscribeNewsletter">
-      <div class="mb-4">
-        <label class="font-semibold block text-white">Email</label>
-        <input
-          class="shadow w-full py-2 px-3"
-          type="text"
-          v-model="form.email"
-          name="email"
-          placeholder="bruce.wayne@imnotbatman.org"
-        />
-      </div>
-      <div class="mb-4">
-        <label class="block text-grey font-bold flex items-center">
-          <toggle-input v-model="form.newsletter"> </toggle-input>
-          <span class="text-sm">
-            Send me your newsletter!
-          </span>
-        </label>
-      </div>
-      <div class="mb-4">
-        <button
-          class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded w-full"
-        >
-          Register
-        </button>
-      </div>
-    </form>
-  </div>
+  <span
+    class="toggle mr-2 leading-tight"
+    role="checkbox"
+    tabindex="0"
+    @click="toggle"
+    :aria-checked="toggled.toString()"
+  ></span>
 </template>
 
 <script>
-import ToggleInput from "./ToggleInput.vue";
-
 export default {
-  name: "App",
-  data() {
-    return {
-      form: {
-        email: "",
-        newsletter: false,
-      },
-    };
+  name: 'ToggleInput',
+  model: {
+    prop: 'toggled',
+    event: 'toggle',
   },
+  props: ['toggled'],
   methods: {
-    suscribeNewsletter() {
-      alert(JSON.stringify(this.form));
+    toggle() {
+      this.$emit('toggle', !this.toggled);
     },
-  },
-  components: {
-    ToggleInput,
   },
 };
 </script>
 
 <style>
-@import "https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css";
-body {
-  background: #252358;
-}
 .toggle {
   position: relative;
   display: inline-block;

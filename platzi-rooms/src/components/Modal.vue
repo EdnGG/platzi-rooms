@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: "Modal",
+  name: 'Modal',
   props: {
     show: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   render() {
     return this.show ? (
@@ -23,9 +23,9 @@ export default {
   },
   methods: {
     onClose() {
-      this.$emit("close-modal");
-    }
-  }
+      this.$emit('close-modal');
+    },
+  },
 };
 </script>
 
