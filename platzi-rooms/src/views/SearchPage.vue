@@ -31,13 +31,6 @@
             </div>
           </div>
         </div>
-        <div class="text-center">
-          <a
-            class="py-3 px-12 bg-yellow-dark no-underline text-yellow-darker text-lg rounded"
-            href="#"
-            >Show all</a
-          >
-        </div>
       </div>
     </section>
   </page-layout>
@@ -49,6 +42,9 @@ import PageLayout from "@/layouts/PageLayout.vue";
 
 export default {
   name: "SearchPage",
+  beforeCreate() {
+    this.$store.dispatch("FETCH_ROOMS");
+  },
   computed: {
     ...mapGetters(["rooms"])
   },
