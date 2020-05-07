@@ -37,6 +37,9 @@
                   <p class="text-grey-dark">Online</p>
                 </div>
               </div>
+              <!-- <buttton class="flex items-center mr-4" @click.prevent="logOut">
+                <i class="material-icons">exit_to-app</i>
+              </buttton> -->
             </div>
             <div v-else>
               <button
@@ -84,6 +87,9 @@ export default {
       });
       console.log("Sign Up Click");
     }
+    // logOut() {
+    //   this.$store.dispatch("LOG_OUT");
+    // }
   },
   computed: {
     ...mapGetters({

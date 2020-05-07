@@ -136,3 +136,7 @@ export default new Vuex.Store({
     userRoomsCount: state => id => countObjectProperties(state.users[id].rooms)
   }
 });
+
+// Dentro del contexto esta:
+// dispatch, commit state
+// commit este metodo permite acceder al mutador
