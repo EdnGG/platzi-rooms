@@ -9,21 +9,21 @@
 </template>
 
 <script>
-import HeaderPartial from '@/partials/HeaderPartial.vue';
-import FooterPartial from '@/partials/FooterPartial.vue';
+import HeaderPartial from "@/partials/HeaderPartial.vue";
+import FooterPartial from "@/partials/FooterPartial.vue";
 
 export default {
-  name: 'PageLayout',
+  name: "PageLayout",
   components: {
     HeaderPartial,
-    FooterPartial,
-  },
+    FooterPartial
+  }
 };
 </script>
 
 <style>
-  .form__field .input-icon {
-    top: 7px;
-    left: 9px;
-  }
+.form__field .input-icon {
+  top: 7px;
+  left: 9px;
+}
 </style>

@@ -34,7 +34,7 @@
       <slot></slot>
     </main>
     <footer-partial></footer-partial>
-    <!-- Modal Login -->
+    <!-- Modals -->
     <modal :show="modals.login" @close-modal="closeModal">
       <h2 class="text-grey-darkest font-semibold text-center mb-6">
         Welcome to Platzi Rooms
@@ -58,7 +58,7 @@
               v-model="formLogin.password"
               class="input__field"
               type="password"
-              placeholder="******"
+              placeholder="*********"
             />
           </div>
         </div>
@@ -71,7 +71,6 @@
         </div>
       </form>
     </modal>
-    <!-- Modal Register -->
     <modal :show="modals.register" @close-modal="closeModalRegister">
       <form class="form" @submit.prevent="registerHandlerSubmit">
         <div class="mb-4">
@@ -141,7 +140,6 @@ export default {
       }
     };
   },
-
   computed: {
     ...mapGetters(["modals"])
   },
@@ -157,7 +155,6 @@ export default {
         name: "login",
         value: false
       });
-      console.log("Close modal");
     },
     closeModalRegister() {
       this.$store.dispatch("TOGGLE_MODAL_STATE", {
@@ -177,7 +174,7 @@ export default {
           password: this.formLogin.password
         })
         .then(() => {
-          this.closeModal(); //this.closeLoginModal()
+          this.closeModal();
         });
     }
   }
