@@ -1,0 +1,8 @@
+const countObjectProperties = () => {
+  if (typeof obj === "object") {
+    return Object.keys(obj).length;
+  }
+  return 0;
+};
+
+export default countObjectProperties;
